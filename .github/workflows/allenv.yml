@@ -20,15 +20,15 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set Environment
-      if: env == 'dev'
+      if: $env == 'dev'
       run: echo "Building for dev environment"
 
     - name: Set Environment
-      if: env == 'qa'
+      if: $env == 'qa'
       run: echo "Building for qa environment"
 
     - name: Set Environment
-      if: env == 'prod'
+      if: $env == 'prod'
       run: echo "Building for prod environment"
 
     - name: Build Application
