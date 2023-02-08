@@ -2,7 +2,7 @@ name: Workflow
 
 on:
   push:
-    branches: [ main ]
+    branches: [ Master ]
 
 env:
   ENV: ${{ env.ENV_VAR }}
