@@ -2,7 +2,7 @@ name: Workflow
 
 on:
   push:
-    branches: [ Master ]
+    branches: [ main ]
 
 env:
   ENV: ${{ env.ENV_VAR }}
@@ -13,23 +13,14 @@ jobs:
 
     strategy:
       matrix:
-        env: [ dev, qa, prod ]
+        env: [ qa, dev, prod ]
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
 
     - name: Set Environment
-      if: $env == 'dev'
-      run: echo "Building for dev environment"
-
-    - name: Set Environment
-      if: $env == 'qa'
-      run: echo "Building for qa environment"
-
-    - name: Set Environment
-      if: $env == 'prod'
-      run: echo "Building for prod environment"
+      run: echo "Building for ${{ env }} environment"
 
     - name: Build Application
-      run: echo "Building application"
+      run: echo "Building application for ${{ env }} environment"
