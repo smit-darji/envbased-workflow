@@ -5,7 +5,7 @@ on:
     branches: [ Master ]
 
 env:
-  ENV: ${{ env.ENV_VAR }}
+  ENV: dev
 
 jobs:
   build:
